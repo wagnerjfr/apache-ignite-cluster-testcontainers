@@ -1,4 +1,4 @@
-package com.example.apache_ignite_cluster_testcontainers;
+package com.example;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ignite.client.IgniteClient;
@@ -126,6 +126,7 @@ class IgniteClusterTest {
 	}
 
 	@Test
+	@Order(3)
 	void checkTableNode2AndNode3() {
 		try (IgniteClient client2 = getIgniteClient(node2)) {
 			checkData(client2);
